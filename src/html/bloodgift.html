@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<!-- Mirrored from np.ia.tt/html/wheel.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 10 Oct 2024 08:36:20 GMT -->
+<head>
+    <meta charset="utf-8" />
+    <title>Free Blood Pressure Test</title>
+    <link rel="shortcut icon" type="image/jpg" href="../assets/images/favicon.png"/>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="data:image/x-icon;," type="image/x-icon" />
+    <link rel="stylesheet" href="../assets/css/bloodgift.css" />
+
+<!-- Google tag (gtag.js) -->
+
+
+  </head>
+  <body>
+    <div id="preloader">
+      <div class="loader"></div>
+    </div>
+    <!-- <div class="header">
+      <img src="../assets/images/NPlogo.png" alt="NE Logo" class="np-logo" />
+      <img src="../assets/images/UltraLogo.png" alt="NE Logo" class="ultra-logo" />
+      <img src="../assets/images/NPigniteLogo.png" alt="NE Logo" class="np1-logo" />
+      
+    </div> -->
+    <div class="wheel-wrapper">
+      <!-- <h1 style="color: #FFE5CA; font-size: 7vw; text-align: center; padding-top: 10%; padding-bottom: 0%;">SPIN THE WHEEL</h1> -->
+    </div>
+
+    <!-- <div class="gui-wrapper" style="background-color: rgba(0, 0, 0, 0.1)">
+      <h1 style="color: #ffe5ca; font-size: 5vw; text-align: center">
+        Swipe down to spin
+      </h1>
+    </div> -->
+    <canvas id="confetti-canvas"></canvas>
+    <div class="header">
+     <a href="#"><img src="../assets/images/bloodgift.png" alt="NE Logo" class="button" /></a>
+    </div>
+    <div class="header">
+      <a href="quizhome.html"><img src="../assets/images/matchbutton.png" alt="NE Logo" class="btnquiz" /></a>
+     </div>
+    <!-- <div class="header">
+      <a href=""><img src="../assets/images/newpress.png" alt="NE Logo" class="startbtn" /></a>
+     </div> -->
+  </body>
+  <script src="../js/spin-wheel-iife.js"></script>
+  <script src="../js/confetti.js"></script>
+  <script>
+    window.addEventListener("load", () => {
+      const confetti = new ConfettiGenerator({ target: "confetti-canvas" });
+      confetti.render();
+    });
+
+    window.addEventListener('resize', () => {
+  const canvas = document.getElementById("confetti-canvas");
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
+
+
+  </script>
+  <script>
+    
+
+  </script>
+</html>

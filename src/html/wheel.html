@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+    <meta charset="utf-8" />
+    <title>EGC Spin Wheel</title>
+    <link rel="shortcut icon" type="image/jpg" href="../assets/images/favicon.ico"/>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="data:image/x-icon;," type="image/x-icon" />
+    <link rel="stylesheet" href="../assets/css/wheel.css" />
+
+
+ 
+
+    <script>
+      window.onload = () => {
+        const quadrants = [
+        {
+    label: "Blood Pressure Testing",
+    backgroundColor: "#FFFFFF",
+    link:"bloodgift.html",
+    labelColor: "#231F20",
+  },
+  {
+    label: "Sugar Testing",
+    backgroundColor: "#E31C37",
+    link:"sugartest.html",
+    labelColor: "#FFFFFF",
+  },
+  {
+    label: "Glucose Testing",
+    backgroundColor: "#1A91D0",
+    link:"glucosetest.html",
+    labelColor: "#FFFFFF",
+  },
+  
+  {
+    label: "First Aid Travel Kit",
+    backgroundColor: "#E31C37",
+    link:"firstaidkit.html",
+    labelColor: "#FFFFFF",
+  },
+  {
+    label: "Cellular Pop Socket",
+    backgroundColor: "#1A91D0",
+    link:"cellularsocket.html",
+    labelColor: "#FFFFFF",
+  },
+  {
+    label: "Blood Pressure Testing",
+    backgroundColor: "#FFFFFF",
+    link:"bloodgift.html",
+    labelColor: "#231F20",
+  },
+  {
+    
+    label: "Sugar Testing ",
+    backgroundColor: "#E31C37",
+    link:"sugartest.html",
+    labelColor: "#FFFFFF",
+  },
+  
+  {
+    label: "Glucose Testing",
+    backgroundColor: "#1A91D0",
+    link:"glucosetest.html",
+    labelColor: "#FFFFFF",
+  },
+  {
+    label: "First Aid Travel Kit",
+    backgroundColor: "#E31C37",
+    link:"firstaidkit.html",
+    labelColor: "#FFFFFF",
+  },
+  {
+    label: "Cellular Pop Socket",
+    backgroundColor: "#1A91D0",
+    link:"cellularsocket.html",
+    labelColor: "#FFFFFF",
+  }
+  
+  // ,
+  // {
+  //   label: "Bag",
+  //   backgroundColor: "#1A91D0",
+  //   link:"group1.html",
+  //   labelColor: "#FFFFFF",
+  // },
+  
+  // {
+  //   label: "Cup",
+  //   backgroundColor: "#FFFFFF",
+  //   link:"group1.html",
+  //   labelColor: "#231F20",
+  // }
+];
+        
+        const container = document.querySelector(".wheel-wrapper");
+
+        const props = {
+          items: quadrants,
+          borderColor: "#A68C5B", // Add the borderColor property
+          borderWidth: 6, // Add the borderWidth property
+          debug: false, // Add the debug property
+          // image: "../assets/images/npmiddle.png", // Add the image property
+          isInteractive: true, // Add the isInteractive property
+          itemBackgroundColors: ["#C0150B"], // Add the itemBackgroundColors property
+          itemLabelAlign: "right", // Add the itemLabelAlign property
+          itemLabelBaselineOffset: 0, // Add the itemLabelBaselineOffset property
+          itemLabelColors: ["#ffffff"], // Add the itemLabelColors property
+          itemLabelFont: "sans-serif", // Add the itemLabelFont property
+          itemLabelFontSizeMax: 24, // Add the itemLabelFontSizeMax property
+          itemLabelRadius: 0.9, // Add the itemLabelRadius property
+          itemLabelRadiusMax: 0.2, // Add the itemLabelRadiusMax property
+          itemLabelRotation: 0, // Add the itemLabelRotation property
+          itemLabelStrokeColor: "#fff", // Add the itemLabelStrokeColor property
+          itemLabelStrokeWidth: 0.05, // Add the itemLabelStrokeWidth property
+          lineColor: "#014668", // Add the lineColor property
+          lineWidth: 6, // Add the lineWidth property
+          radius: .88, // Add the radius property
+          rotation: 210, // Add the rotation property
+          rotationResistance: -35, // Add the rotationResistance property
+          rotationSpeed: 0, // Add the rotationSpeed property
+          rotationSpeedMax: 250, // Add the rotationSpeedMax property
+          offset: { w: 0, h: 0 }, // Add the offset property
+          overlayImage: "../assets/images/finalframe.png",// Add the overlayImage property
+          
+          pointerAngle: 0, // Add the pointerAngle property
+        };
+
+        window.wheel = new spinWheel.Wheel(container, props);
+
+        // Define a function to open the selected link
+        function openSelectedLink(selectedItemIndex) {
+          const selectedLink = quadrants[selectedItemIndex].link;
+          window.open(selectedLink, "_self"); //blank for a new tab
+        }
+
+        // Define a callback for the onRest event to show a pop-up before opening the link
+        wheel.onRest = (event) => {
+          const selectedItemIndex = event.currentIndex;
+          const selectedLabel = quadrants[selectedItemIndex].label;
+          // Show a pop-up with the label for 2 seconds
+          // alert(`Quiz Category: ${selectedLabel}`);
+          // After 2 seconds, open the selected link
+          setTimeout(() => {
+            openSelectedLink(selectedItemIndex);
+          }, 1000); // Delayed opening of the link after 5 seconds
+        };
+      };
+    </script>
+
+<!-- Google tag (gtag.js) -->
+
+
+  </head>
+  <body>
+    <div id="preloader">
+      <div class="loader"></div>
+    </div>
+    <!-- <div class="header">
+      <img src="../assets/images/NPlogo.png" alt="NE Logo" class="np-logo" />
+      <img src="../assets/images/UltraLogo.png" alt="NE Logo" class="ultra-logo" />
+      <img src="../assets/images/NPigniteLogo.png" alt="NE Logo" class="np1-logo" />
+      
+    </div> -->
+    <div class="wheel-wrapper">
+      <!-- <h1 style="color: #FFE5CA; font-size: 7vw; text-align: center; padding-top: 10%; padding-bottom: 0%;">SPIN THE WHEEL</h1> -->
+    </div>
+
+    <!-- <div class="gui-wrapper" style="background-color: rgba(0, 0, 0, 0.1)">
+      <h1 style="color: #ffe5ca; font-size: 5vw; text-align: center">
+        Swipe down to spin
+      </h1>
+    </div> -->
+   
+  </body>
+  <script src="../js/spin-wheel-iife.js"></script>
+
+
+</html>
